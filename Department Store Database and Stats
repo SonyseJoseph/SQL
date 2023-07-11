@@ -1,0 +1,34 @@
+--Create a Department Store Database
+
+CREATE TABLE Department_Store (Id Integer primary key,
+Item text,Section text,Price Integer,quantity
+Integer,Total_Revenue Integer); 
+
+INSERT INTO department_store VALUES (1,"Jean", "Bottom", 15.99, 300,4797);
+INSERT INTO department_store VALUES (2,"Shirt","Tops", 9.99, 100, 999);
+INSERT INTO department_store VALUES (3, "Jacket", "Outerwear", 34.99, 20, 699.8);
+INSERT INTO department_store VALUES (4, "Sweater", "Outerwear", 24.00, 10, 240);
+INSERT INTO department_store VALUES (5, "Sock", "Accessorie", 12.99, 75,974.25);
+INSERT INTO department_store VALUES (6, "Hat", "Accessorie", 10, 10,100);
+INSERT INTO department_store VALUES (7, "Short", "Bottom",24.99, 2, 49.98);
+INSERT INTO department_store VALUES (8, "Trouser", "Bottom", 34.99, 200, 6998);
+INSERT INTO department_store VALUES (9, "Skirt", "Bottom", 21.00, 47, 987);
+INSERT INTO department_store VALUES (10, "Blouse", "Top", 54.00, 1, 54.00);
+INSERT INTO department_store VALUES (11, "Tank Top","Top", 15.99, 12, 191.88);
+INSERT INTO department_store VALUES (12, "Bodycon Dress", "Dress", 12.99, 3, 38.97);
+INSERT INTO department_store VALUES ( 13, "Leggings", "Bottoms", 7.99, 0, 0);
+INSERT INTO department_Store VALUES (14, "Scarf", "Accessorie", 10, 12, 120);
+INSERT INTO department_store VALUES (15, "Cat Eye Sunglasses", "Accessorie", 5,7,35);
+
+-- Display the database ordered by price
+SELECT* From Department_store 
+ORDER BY price;
+
+-- What is the total amount of Inventory currently
+SELECT SUM (QUANTITY) FROM Department_Store;
+
+-- What Item is currently out of stock/ Running Low 
+Select item, Price, quantity 
+FROM Department_Store
+Order BY Quantity  
+LIMIT 7
